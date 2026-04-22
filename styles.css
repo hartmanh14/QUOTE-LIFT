@@ -1,0 +1,392 @@
+:root {
+  --bg: #f7efe4;
+  --surface: rgba(255, 250, 245, 0.82);
+  --surface-strong: #fffaf5;
+  --ink: #1f1a17;
+  --muted: #665b52;
+  --accent: #e86f2f;
+  --accent-deep: #9e3d18;
+  --accent-soft: #ffd7b5;
+  --line: rgba(31, 26, 23, 0.12);
+  --shadow: 0 20px 60px rgba(82, 45, 16, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(255, 196, 144, 0.65), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(232, 111, 47, 0.22), transparent 30%),
+    linear-gradient(180deg, #fff8f0 0%, #f6ecdf 100%);
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 56px;
+}
+
+.topbar,
+.hero-grid,
+.reason-grid,
+.app-grid,
+.pipeline-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.topbar {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.brand,
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.nav-link,
+.button {
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.nav-link {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.hero {
+  padding: 8px 0 40px;
+}
+
+.hero-grid {
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.7rem, 7vw, 5.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  max-width: 12ch;
+}
+
+.hero-text,
+.section-heading p,
+.reason-card p,
+.card-copy,
+.small-note,
+.tips-list li,
+.summary-note,
+.summary-details p,
+.lead-meta,
+.lead-followup {
+  color: var(--muted);
+}
+
+.hero-text {
+  max-width: 56ch;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  margin: 18px 0 24px;
+}
+
+.hero-actions,
+.hero-points,
+.mini-stats,
+.pipeline-head {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-points {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+}
+
+.hero-points li {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 250, 245, 0.8);
+  border: 1px solid rgba(31, 26, 23, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button:hover,
+.nav-link:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 12px 30px rgba(232, 111, 47, 0.28);
+}
+
+.button-secondary {
+  background: rgba(255, 250, 245, 0.92);
+  color: var(--ink);
+  border: 1px solid rgba(31, 26, 23, 0.1);
+}
+
+.button-ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(31, 26, 23, 0.1);
+}
+
+.hero-card,
+.panel,
+.reason-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.hero-card {
+  padding: 28px;
+  border-radius: 28px;
+}
+
+.card-label,
+.summary-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-deep);
+  margin: 0 0 14px;
+}
+
+.price-row {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+}
+
+.price {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.price-caption {
+  color: var(--muted);
+}
+
+.card-copy {
+  line-height: 1.6;
+}
+
+.mini-stats article {
+  flex: 1 1 120px;
+  padding: 14px;
+  border-radius: 20px;
+  background: var(--surface-strong);
+}
+
+.mini-stats strong {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.section {
+  padding: 48px 0;
+}
+
+.section-heading {
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.section-accent {
+  position: relative;
+}
+
+.reason-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reason-card,
+.panel {
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.reason-card h3,
+.panel h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.app-grid,
+.pipeline-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+label {
+  display: block;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 16px;
+  border: 1px solid rgba(31, 26, 23, 0.12);
+  background: rgba(255, 255, 255, 0.88);
+  padding: 13px 14px;
+  font: inherit;
+}
+
+.summary-box {
+  padding: 20px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #fff4e8 0%, #ffe0c5 100%);
+  margin-bottom: 16px;
+}
+
+.summary-price {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.summary-note {
+  margin-bottom: 0;
+}
+
+.summary-details {
+  margin-bottom: 18px;
+}
+
+.lead-list {
+  display: grid;
+  gap: 14px;
+}
+
+.lead-card {
+  padding: 18px;
+  border-radius: 20px;
+  background: var(--surface-strong);
+  border: 1px solid rgba(31, 26, 23, 0.08);
+}
+
+.lead-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.lead-head h4 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.lead-price {
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.tips-list {
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+.empty-state {
+  margin: 0;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .reason-grid,
+  .app-grid,
+  .pipeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 18px;
+  }
+
+  .hero-card,
+  .panel,
+  .reason-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .price {
+    font-size: 3rem;
+  }
+
+  .summary-price {
+    font-size: 2.4rem;
+  }
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuoteLift | Faster Quotes for Home Service Pros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div class="brand">QuoteLift</div>
+        <a class="nav-link" href="#waitlist">Join waitlist</a>
+      </nav>
+
+      <section class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">First business idea to launch fast</p>
+          <h1>Help cleaners, landscapers, and handymen send quotes in minutes.</h1>
+          <p class="hero-text">
+            QuoteLift is a simple web app for solo service businesses to price jobs,
+            save leads, and follow up before the customer goes cold.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#calculator">Try the demo</a>
+            <a class="button button-secondary" href="#why-this-works">Why this can sell</a>
+          </div>
+          <ul class="hero-points">
+            <li>No app download required</li>
+            <li>Easy monthly subscription offer</li>
+            <li>Good fit for local Facebook groups and cold outreach</li>
+          </ul>
+        </div>
+
+        <div class="hero-card">
+          <p class="card-label">Suggested starter pricing</p>
+          <div class="price-row">
+            <span class="price">$29</span>
+            <span class="price-caption">per month per business</span>
+          </div>
+          <p class="card-copy">
+            Position it as: "Win more jobs by sending fast, consistent quotes and keeping follow-ups organized."
+          </p>
+          <div class="mini-stats">
+            <article>
+              <strong>10</strong>
+              <span>customers = $290/mo</span>
+            </article>
+            <article>
+              <strong>25</strong>
+              <span>customers = $725/mo</span>
+            </article>
+            <article>
+              <strong>50</strong>
+              <span>customers = $1,450/mo</span>
+            </article>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="why-this-works">
+        <div class="section-heading">
+          <p class="eyebrow">Why this idea</p>
+          <h2>A practical first SaaS for a solo founder.</h2>
+        </div>
+        <div class="reason-grid">
+          <article class="reason-card">
+            <h3>Clear pain</h3>
+            <p>Many small service businesses still quote through texts, notes, or memory. That loses jobs.</p>
+          </article>
+          <article class="reason-card">
+            <h3>Easy buyer</h3>
+            <p>You can find cleaners, lawn care businesses, and handymen locally without needing a huge audience.</p>
+          </article>
+          <article class="reason-card">
+            <h3>Simple MVP</h3>
+            <p>The first version only needs pricing help, lead tracking, and reminders. No complex marketplace required.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-accent" id="calculator">
+        <div class="section-heading">
+          <p class="eyebrow">Working MVP demo</p>
+          <h2>Estimate a job and save the lead.</h2>
+          <p>This demo stores leads in your browser so you can feel how the product works before we add a real backend.</p>
+        </div>
+
+        <div class="app-grid">
+          <form class="panel calculator" id="quote-form">
+            <h3>Create quote</h3>
+
+            <label>
+              Customer name
+              <input type="text" id="customerName" name="customerName" placeholder="Jordan Smith" required>
+            </label>
+
+            <label>
+              Service type
+              <select id="serviceType" name="serviceType">
+                <option value="House Cleaning">House Cleaning</option>
+                <option value="Landscaping">Landscaping</option>
+                <option value="Handyman">Handyman</option>
+              </select>
+            </label>
+
+            <label>
+              Job size
+              <select id="jobSize" name="jobSize">
+                <option value="small">Small</option>
+                <option value="medium" selected>Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </label>
+
+            <label>
+              Travel distance (miles)
+              <input type="number" id="travelMiles" name="travelMiles" min="0" value="10">
+            </label>
+
+            <label>
+              Extra materials cost
+              <input type="number" id="materialsCost" name="materialsCost" min="0" value="0">
+            </label>
+
+            <label>
+              Urgency
+              <select id="urgency" name="urgency">
+                <option value="standard" selected>Standard</option>
+                <option value="rush">Rush job</option>
+              </select>
+            </label>
+
+            <button class="button button-primary" type="submit">Generate quote</button>
+          </form>
+
+          <section class="panel quote-output">
+            <h3>Quote summary</h3>
+            <div class="summary-box">
+              <p class="summary-label">Recommended quote</p>
+              <p class="summary-price" id="quotePrice">$0</p>
+              <p class="summary-note" id="quoteNote">Fill out the form to calculate a quote.</p>
+            </div>
+
+            <div class="summary-details" id="quoteBreakdown">
+              <p>Base service: $0</p>
+              <p>Travel fee: $0</p>
+              <p>Materials: $0</p>
+              <p>Rush fee: $0</p>
+            </div>
+
+            <button class="button button-secondary" id="saveLeadButton" type="button" disabled>Save lead</button>
+          </section>
+        </div>
+      </section>
+
+      <section class="section" id="pipeline">
+        <div class="section-heading">
+          <p class="eyebrow">Lead tracker</p>
+          <h2>Saved leads and follow-up pipeline.</h2>
+        </div>
+
+        <div class="pipeline-grid">
+          <section class="panel">
+            <div class="pipeline-head">
+              <h3>Your leads</h3>
+              <button class="button button-ghost" id="clearLeadsButton" type="button">Clear demo data</button>
+            </div>
+            <div class="lead-list" id="leadList"></div>
+          </section>
+
+          <aside class="panel tips-panel" id="waitlist">
+            <h3>How you would sell it</h3>
+            <ul class="tips-list">
+              <li>Offer a free 7-day trial to local service businesses.</li>
+              <li>Start with one niche first, like house cleaners.</li>
+              <li>Charge monthly and help them set up their first pricing template.</li>
+              <li>Use Stripe later for paid plans and Neon for customer data.</li>
+            </ul>
+            <form class="waitlist-form" id="waitlist-form">
+              <label>
+                Your email
+                <input type="email" id="waitlistEmail" name="waitlistEmail" placeholder="you@example.com" required>
+              </label>
+              <button class="button button-primary" type="submit">Save my founder note</button>
+            </form>
+            <p class="small-note" id="waitlistMessage">This saves locally for now as a reminder of the direction we picked.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
