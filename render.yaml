@@ -5,7 +5,7 @@ services:
     plan: free
     branch: main
     autoDeploy: true
-    buildCommand: echo "Static site ready"
+    buildCommand: true
     staticPublishPath: .
     routes:
       - type: rewrite
